@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--Header-->
+    <header>
+
+        <div class="row header-blue">
+  
+            <div class="nav-container">
+    
+                <nav>
+                    <a class="navbar nav-links" href="./scores.html">Highscores</a>            
+                </nav>
+    
+            </div>
+  
+          <!--Timer-->
+          <div id="countdown">
+            <time id="countdown-number">60</time><p class="display-inline"> s</p>
+          </div>
+  
+        </div>
+
+    </header>
+
+
+    <main>
+        <div class="main-feature" id="intro">
+            <div>
+                <h1>Code Quiz</h1>
+            </div>
+            <div class="guidance-text">
+                <p class="">
+                    Try to answer the questions within 60 seconds. 
+                </p>
+                <h5 class="text-left padding-left-30">
+                    Rules:
+                </h5>
+                <ul>
+                    <li class="text-left">
+                        You will be given 1 point per correct answer.
+                    </li>
+                    <li class="text-left">
+                        Wrong answers will -5 seconds from your time.
+                    </li>
+                    <li class="text-left">
+                        There are 10 questions in total.
+                    </li>
+                    <li class="text-left">
+                        If you complete all of the questions, any remaining time will add more points onto your score (1 point per 10 seconds remaining).
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Start the quiz -->
+            <button id="start">Start Quiz</button>
+
+        </div>
+
+        <!--Quiz questions-->
+        <div class="main-feature" id="questions">
+
+            <!--Question-->
+            <div id="question-container">
+                <h3 id="question"></h3>
+            </div>
+
+            <!-- Choices appear here. The user clicks on their chosen answer -->
+            <ol id="options">
+            </ol>
+        </div>
+
+        <!-- Score summary and submit score -->
+        <div class="main-feature" id="final-score-screen">
+
+            <!-- Header -->
+            <div class="margin-bottom-30">
+                <h2>Finished!</h2>
+            </div>
+
+            <!-- Display number of correct answers -->
+            <div class="no-display" id="correct-score-container">
+                <p class="pull-left">Number of correct answers =  </p>
+                <p class="pull-left margin-left-10" id="user-score"></p>
+            </div>
+            <br>
+
+            <!-- Display remaining time bonus -->
+            <div class="no-display" id="time-score-container">
+                <p class="pull-left">Time bonus = </p>
+                <p class="pull-left margin-left-10" id="user-time-score"></p>
+            </div>
+            <br>
+
+            <!-- Display total score -->
+            <div class="no-display" id="total-score-container">
+                <p class="pull-left">Total score =  </p>
+                <p class="pull-left margin-left-10" id="user-total-score"></p>
+                <p class="pull-left margin-left-10"> points.</p>
+            </div>
+            <br>
+            
+            <!-- Submit score section -->
+            <form class="no-display" id="enter-and-submit">
+                
+                <p class="pull-left" id="enter-name-static">Your name:</p>
+
+                <!-- User enters their name in the form -->
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name-input"/>
+                </div>
+                
+                <!-- Button to submit score to the Highscores -->
+                <button class="pull-left" id="submit-button">Submit</button>
+
+            </form>
+        </div>
+
+    </main>
+
+</body>
+<script src="./Assets/script.js"></script>
+</html>

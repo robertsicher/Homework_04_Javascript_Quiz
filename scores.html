@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highscores</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Rubik&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="row header-blue">
+            <div class="nav-container">
+                <nav>
+                    <a class="navbar nav-links" href="./index.html">Quiz Homepage</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-feature">
+            <div>
+                <h1>Highscores</h1>
+            </div>
+            <table class="d-none" id="scores-table">
+
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Score</td>
+                        <td>Date</td>
+                    </tr>
+                </thead>
+                <tbody id="scores-display">
+                </tbody>
+            </table>
+
+            <div class="full-center">
+                <button id="clear-button">Clear Highscores</button>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./assets/scores.js"></script>
+
+</html>
