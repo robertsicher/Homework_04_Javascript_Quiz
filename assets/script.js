@@ -179,14 +179,15 @@ function startQuiz() {
 
 
 function startTimer() {
-    secondsLeft = 60;
+    secondsLeft = 100;
     interval = setInterval(function () {
         renderTime();
         if (secondsLeft < 0) {
-            secondsLeft--;
             clearInterval(interval);
             endQuiz();
-        } else {}
+        } else {
+            secondsLeft--;
+        }
     }, 1000);
 }
 
@@ -211,12 +212,6 @@ function endQuiz() {
     dateArray.forEach(formatDate);
 
     dateOfQuiz = dateArray[0] + '-' + dateArray[1] + '-' + dateArray[2];
-
-    if (
-        typeof timeScore !== 'num'
-    ) {
-        timeScore = 0;
-    }
 
     totalScore = correctScore + timeScore;
 
@@ -279,9 +274,7 @@ function showQuestion() {
 
 //Which option is clicked
 
-
-
-options.addEventListener('click', function () {
+options.addEventListener('click', function (event) {
     if (event.target.textContent === randomedQuestions[questionNumber].answer) {
         event.target.setAttribute('style', 'background-color: #00AA00');
         correctScore++;
@@ -291,21 +284,20 @@ options.addEventListener('click', function () {
     }
 
     setTimeout(function () {
-        if (questionNumber === randomedQuestions.length - 1) {
-            setTimeout(function () {
+    if (questionNumber === randomedQuestions.length - 1) {
+        setTimeout(function () {
 
-            }, 200);
+        }, 200);
 
-            questionsChoices.setAttribute('style', 'display:none;');
+        questionsChoices.setAttribute('style', 'display:none;');
 
-            timeScore = Math.floor(secondsLeft / 10);
-
-            secondsLeft = 0
-        } else {
-            questionNumber++;
-            showQuestion();
-        }
-    }, 200);
+        timeScore = Math.floor(secondsLeft / 10);
+        secondsLeft = 0
+    } else {
+        questionNumber++;
+        showQuestion();
+    }
+     }, 200);
 })
 
 submitButton.addEventListener('click', function () {
