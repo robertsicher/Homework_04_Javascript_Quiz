@@ -6,23 +6,22 @@ var scoresChild;
 var currentPage = document.location.href;
 var allScores;
 
-// On load, display all scores from the local storage
+// Display the scores
 renderScores();
 
 function renderScores() {
 
-  // Pulls the scores from the local storage
+  // Pull the scores
   getAllScores();
   
-  // If there are scores in the allScores array, display the highscores table
   if(allScores.length > 0){
     scoresTable.removeAttribute("class");
     scoresTable.setAttribute("class","table table-responsive table-striped");
     
-    // Sort the entries in the allScores array by "score"
+    // Sort the entries 
     var data = allScores.sort(compareValues("score", "desc"));
     
-    //Display all the updated scores from the allScores array
+    //Display the updated scores
     for(var i=0; i < data.length; i++){
       var tr = document.createElement("tr");
       var tdName = document.createElement("td");
@@ -38,18 +37,16 @@ function renderScores() {
       
     }
   }   
-  
-  // If the allScores array is empty, do not display the highscores table
   else{
     scoresTable.setAttribute("class","d-none");
   }
   
 }
 
-// Pulls the scores from the local storage
+// Pulls the scores
 function getAllScores() {
 
-  // If the allScores array is not initialised, initialise it with an empty array
+  // Start it with an empty array
   if(!localStorage.getItem("allScores")){
     allScores = [];
   }
@@ -83,10 +80,10 @@ function compareValues(key, order = "asc") {
   };
 }
   
-// Add event listener for the clear Highscores button
+// Event listener for clear Highscores
 clearBtn.addEventListener("click", function(){
 
-  // Ask the user to confirm they want to clear the highscores before proceeding
+  // Clear conf
   var confirmClear = confirm("Are you sure you want to clear the Highscores?\nOk = Yes. Cancel = No")
   
   if (confirmClear){
